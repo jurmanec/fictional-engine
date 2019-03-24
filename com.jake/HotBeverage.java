@@ -1,8 +1,9 @@
 public class HotBeverage {
 
-        public void identify() { 
 
-                System.out.println("I am a hot beverage."); 
+        public void identify() throws NotHotBevException {
+
+                System.out.println("I am a hot beverage.");
 
         }
 

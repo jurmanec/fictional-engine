@@ -29,6 +29,9 @@ public class Coffee extends HotBeverage {
 	public void setBrewType(String brewType) {
 		this.brewType = brewType;
 	}
+	public void setTimeSinceBrewed(int timeSinceBrewed) {
+		this.timeSinceBrewed = timeSinceBrewed;
+	}
 
 	@Override
 	public String toString() {
@@ -36,7 +39,11 @@ public class Coffee extends HotBeverage {
 	}
 
 	@Override
-	public void identify() {
-		System.out.println("I am a cup of coffee");
+	public void identify() throws NotHotBevException {
+
+	if (timeSinceBrewed > 60) {
+		throw new NotHotBevException("This coffee is an hour old");
+	}
+	System.out.println("I am a cup of coffee");
 	}
 }
